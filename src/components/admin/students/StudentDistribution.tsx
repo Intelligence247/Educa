@@ -84,24 +84,24 @@ const StudentDistribution: React.FC = () => {
         </div>
         <section>
           {/* Key Metrics */}
-            <div className=" flex gap-4 justify-center items-center">
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                <h3 className="text-lg font-bold text-green-600">500</h3>
-                <p className="text-sm text-green-700">Total Students</p>
-              </div>
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <h3 className="text-lg font-bold text-blue-600">500</h3>
-                <p className="text-sm text-blue-700">Total Female std.</p>
-              </div>
-              <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
-                <h3 className="text-lg font-bold text-purple-600">500</h3>
-                <p className="text-sm text-purple-700">Total Male std.</p>
-              </div>
+          <div className=" flex justify-around items-center">
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+              <h3 className="text-lg font-bold text-green-600">500</h3>
+              <p className="text-sm text-green-700">Total Students</p>
+            </div>
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <h3 className="text-lg font-bold text-blue-600">500</h3>
+              <p className="text-sm text-blue-700">Total Female std.</p>
+            </div>
+            <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+              <h3 className="text-lg font-bold text-purple-600">500</h3>
+              <p className="text-sm text-purple-700">Total Male std.</p>
+            </div>
           </div>
 
           {/* Bar Chart */}
           <div className="border-border-1 rounded">
-            <div className="h-64">
+            <div className="h-80">
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
