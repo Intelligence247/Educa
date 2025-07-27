@@ -8,11 +8,10 @@ import SuccessModal from '@/components/shared/SuccessModal';
 
 import Image from 'next/image';
 const setupSteps = [
-  "Basic Information",
-  "Contact Information",
-  "Session & Term",
-  "Principal Info",
-  "Payment Settings"
+  '',
+  '',
+  '',
+  '',
 ];
 
 export default function SchoolSetup() {
