@@ -1,26 +1,66 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Educa Primary Colors */
+  --primary-blue: #0A3D62;
+  --secondary-blue: #ADD8E6;
+  --accent-green: #3CB371;
+  --success-green: #4CAF50;
+  
+  /* Neutral Colors */
+  --white: #FFFFFF;
+  --light-gray: #F5F5F5;
+  --gray: #808080;
+  --dark-gray: #333333;
+  --black: #000000;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+  background: #FFFFFF;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Custom utility classes */
+.btn-primary {
+  @apply bg-primary-blue text-white px-6 py-3 rounded-lg font-medium transition-colors hover:bg-primary-blue/90;
+}
+
+.btn-secondary {
+  @apply bg-secondary-blue text-primary-blue px-6 py-3 rounded-lg font-medium transition-colors hover:bg-secondary-blue/90;
+}
+
+.btn-outline {
+  @apply border border-secondary-blue text-secondary-blue bg-white px-6 py-3 rounded-lg font-medium transition-colors hover:bg-secondary-blue hover:text-white;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 rounded-lg border border-gray-300 bg-light-gray focus:outline-none focus:ring-2 focus:ring-primary-blue focus:border-transparent;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md p-6;
 }
