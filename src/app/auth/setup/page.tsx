@@ -8,10 +8,11 @@ import SuccessModal from '@/components/shared/SuccessModal';
 
 import Image from 'next/image';
 const setupSteps = [
-  '',
-  '',
-  '',
-  '',
+  "Basic Information",
+  "Contact Information",
+  "Session & Term",
+  "Principal Info",
+  "Payment Settings"
 ];
 
 export default function SchoolSetup() {
@@ -348,7 +349,7 @@ export default function SchoolSetup() {
 
           <ProgressIndicator
             currentStep={currentStep}
-            totalSteps={5}
+            // totalSteps={5}
             steps={setupSteps}
           />
 

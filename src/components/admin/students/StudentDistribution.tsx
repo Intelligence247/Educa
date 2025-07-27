@@ -11,6 +11,15 @@ import {
   ResponsiveContainer
 } from 'recharts';
 
+interface TooltipProps {
+  active?: boolean;
+  payload?: Array<{
+    value: number;
+    name: string;
+  }>;
+  label?: string;
+}
+
 const StudentDistribution: React.FC = () => {
   const classData = [
     { class: 'Pry 1', female: 36, male: 36, total: 60 },
@@ -42,7 +51,7 @@ const StudentDistribution: React.FC = () => {
     { class: 'SS3', students: 60 }
   ];
 
-  const CustomTooltip = ({ active, payload, label }: any) => {
+  const CustomTooltip: React.FC<TooltipProps> = ({ active, payload, label }) => {
     if (active && payload && payload.length) {
       return (
         <div className="bg-primary-blue text-white p-3 rounded-lg shadow-lg border-0">
@@ -57,7 +66,7 @@ const StudentDistribution: React.FC = () => {
   return (
     <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
       <h2 className="text-lg font-semibold text-dark-gray mb-6">Student Distribution by Class</h2>
-
+      
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Summary Table */}
         <div className="border-border-1 rounded">
@@ -82,6 +91,7 @@ const StudentDistribution: React.FC = () => {
             </table>
           </div>
         </div>
+
         <section>
           {/* Key Metrics */}
           <div className=" flex justify-around items-center">
@@ -105,20 +115,20 @@ const StudentDistribution: React.FC = () => {
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={chartData} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
-                  <XAxis
-                    dataKey="class"
+                  <XAxis 
+                    dataKey="class" 
                     tick={{ fontSize: 10 }}
                     axisLine={false}
                     tickLine={false}
                   />
-                  <YAxis
+                  <YAxis 
                     tick={{ fontSize: 10 }}
                     axisLine={false}
                     tickLine={false}
                   />
                   <Tooltip content={<CustomTooltip />} />
-                  <Bar
-                    dataKey="students"
+                  <Bar 
+                    dataKey="students" 
                     fill="#0A3D62"
                     radius={[4, 4, 0, 0]}
                   />

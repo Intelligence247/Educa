@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 import LoadingScreen from '@/components/shared/LoadingScreen';
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
   const [loadingMessage, setLoadingMessage] = useState('Initializing Educa...');
 
@@ -69,7 +68,7 @@ export default function Home() {
     return () => clearInterval(interval);
   }, []);
 
-  if (isLoading) {
+  if (true) { // isLoading is removed, so always render LoadingScreen
     return (
       <LoadingScreen 
         progress={progress} 

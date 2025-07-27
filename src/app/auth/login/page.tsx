@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Logo from '@/components/shared/Logo';
 import Button from '@/components/shared/Button';
 import Input from '@/components/shared/Input';
 import Image from 'next/image';

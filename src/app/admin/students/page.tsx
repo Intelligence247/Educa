@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import StudentDistribution from '@/components/admin/students/StudentDistribution';
 import StudentList from '@/components/admin/students/StudentList';
 import AddStudentModal from '@/components/admin/students/AddStudentModal';
-import { Download, Printer, Plus, Upload } from 'lucide-react';
+import { Download, Printer, Plus } from 'lucide-react';
 import Button from '@/components/shared/Button';
 import AI_INSIGHT from './AI_INSIGHT';
 
@@ -78,7 +78,7 @@ export default function StudentManagement() {
       <div className="bg-white rounded-lg shadow-sm border border-gray-200">
         <div className="p-6">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-semibold text-dark-gray">JSS2 Class Student List</h2>
+            <h2 className="text-lg font-semibold text-dark-gray">JSS 2 class</h2>
             <div className="flex items-center space-x-3">
               <select
                 value={selectedClass}
